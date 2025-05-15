@@ -1,0 +1,100 @@
+{
+    "series": [
+        {
+            "id": "friends",
+            "title": "Friends (1994-2004)",
+            "description": "Friends est une sitcom culte qui a marqué toute une génération avec ses six personnages inséparables vivant à New York. Entre humour, amour et amitié, la série explore avec finesse et légèreté les hauts et les bas de la vie adulte. Son humour universel et ses répliques cultes ont contribué à en faire un phénomène mondial, encore regardé des décennies après sa fin.",
+            "imageUrl": "/images/friends.jpg",
+            "position": {
+                "x": 2,
+                "y": 1.16,
+                "z": 2
+            },
+            "category": "sitcom"
+        },
+        {
+            "id": "office",
+            "title": "The Office (2005-2013)",
+            "description": "The Office est une sitcom américaine au format mockumentaire qui suit le quotidien absurde d’une entreprise de papier en Pennsylvanie. Portée par le personnage excentrique de Michael Scott, interprété par Steve Carell, la série mêle humour gênant, moments sincères et satire sociale, devenant un modèle du genre et une source infinie de mèmes sur internet.",
+            "imageUrl": "/images/office.jpg",
+            "position": {
+                "x": 2,
+                "y": 1.16,
+                "z": 7
+            },
+            "category": "sitcom"
+        },
+        {
+            "id": "himym",
+            "title": "How I Met Your Mother (2005-2014)",
+            "description": "How I Met Your Mother raconte de manière originale et non linéaire les aventures sentimentales de Ted Mosby et de sa bande d’amis à New York. La série se distingue par sa narration inventive, ses personnages mémorables comme Barney Stinson, et sa capacité à mêler humour et émotion avec brio, créant un attachement profond chez les spectateurs.",
+            "imageUrl": "/images/himym.jpg",
+            "position": {
+                "x": 2,
+                "y": 1.16,
+                "z": 12
+            },
+            "category": "sitcom"
+        },
+        {
+            "id": "seinfeld",
+            "title": "Seinfeld (1989-1998)",
+            "description": "Considérée comme l'une des meilleures sitcoms de tous les temps, Seinfeld se démarque par son humour basé sur le quotidien et ses observations absurdes sur la vie urbaine. Portée par le comédien Jerry Seinfeld et ses amis excentriques, la série a influencé tout le genre de la sitcom avec sa fameuse règle du « show about nothing ».",
+            "imageUrl": "/images/seinfeld.jpg",
+            "position": {
+                "x": 2,
+                "y": 1.16,
+                "z": 17
+            },
+            "category": "sitcom"
+        },
+        {
+            "id": "brooklyn99",
+            "title": "Brooklyn Nine-Nine (2013-2021)",
+            "description": "Brooklyn Nine-Nine est une comédie policière rafraîchissante qui suit les aventures loufoques d’une équipe de détectives new-yorkais. Avec son humour vif, ses personnages diversifiés et ses dialogues rapides, la série aborde aussi des thèmes sérieux avec légèreté, tout en restant profondément attachante et hilarante.",
+            "imageUrl": "images/brooklyn99.jpg",
+            "position": {
+                "x": 2,
+                "y": 1.16,
+                "z": -2
+            },
+            "category": "sitcom"
+        },
+        {
+            "id": "bigbangtheory",
+            "title": "The Big Bang Theory (2007-2019)",
+            "description": "The Big Bang Theory suit un groupe de scientifiques socialement maladroits dont le quotidien est bouleversé par l’arrivée d’une voisine extravertie. Mélangeant références geek, humour scientifique et dynamique de groupe, la série est devenue un pilier de la culture pop télévisuelle grâce à ses personnages exubérants et ses répliques cultes.",
+            "imageUrl": "images/bigbang.jpg",
+            "position": {
+                "x": 2,
+                "y": 1.16,
+                "z": -7
+            },
+            "category": "sitcom"
+        },
+        {
+            "id": "modernfamily",
+            "title": "Modern Family (2009-2020)",
+            "description": "Modern Family propose une vision contemporaine et hilarante de la famille à travers trois foyers aux profils variés. Grâce à sa narration en style documentaire et à sa galerie de personnages uniques, la série explore avec humour les situations du quotidien, les différences culturelles et les liens intergénérationnels.",
+            "imageUrl": "images/modernfamily.jpg",
+            "position": {
+                "x": 2,
+                "y": 1.16,
+                "z": -12
+            },
+            "category": "sitcom"
+        },
+        {
+            "id": "twoandhalfmen",
+            "title": "Two and a Half Men (2003-2015)",
+            "description": "Two and a Half Men raconte la cohabitation explosive entre un homme à femmes, son frère divorcé et le fils adolescent de ce dernier. Connue pour son humour provocant et ses dialogues percutants, la série a connu un immense succès pendant des années, notamment grâce à la performance de Charlie Sheen.",
+            "imageUrl": "images/twoandhalfmen.jpg",
+            "position": {
+                "x": 2,
+                "y": 1.16,
+                "z": -17
+            },
+            "category": "sitcom"
+        }
+    ]
+}
