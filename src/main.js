@@ -10,11 +10,35 @@ import { ModalManager } from './classes/ModalManager.js';
 
 class Game {
     constructor() {
-        this.isStarted = true;
-        this.startGame();
+        this.animate = this.animate.bind(this);
+        this.createLoadingScreen();
+        
+        requestAnimationFrame(() => {
+            this.init();
+            this.animate();
+            
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loading-screen');
+                loadingScreen.classList.add('fade-out');
+                loadingScreen.addEventListener('transitionend', (event) => {
+                    event.target.remove();
+                });
+            }, 3000); 
+        });
     }
 
-    startGame() {
+    createLoadingScreen() {
+        const loadingScreen = document.createElement('div');
+        loadingScreen.id = 'loading-screen';
+
+        const loader = document.createElement('div');
+        loader.id = 'loader';
+
+        loadingScreen.appendChild(loader);
+        document.body.appendChild(loadingScreen);
+    }
+
+    init() {
         this.scene = new Scene();
         this.floor = new Floor(this.scene.scene);
         this.environment = new Environment(this.scene.scene);
@@ -22,7 +46,6 @@ class Game {
         this.inputManager = new InputManager();
         this.modalManager = new ModalManager();
         
-        // Création des points d'intérêt à partir du JSON
         this.interestPoints = seriesData.series.map(series => 
             new InterestPoint(
                 this.scene.scene,
@@ -34,7 +57,6 @@ class Game {
         );
 
         this.clock = new THREE.Clock();
-        this.animate();
     }
 
     checkInteractions() {
@@ -53,8 +75,7 @@ class Game {
     }
 
     animate() {
-        requestAnimationFrame(this.animate.bind(this));
-        
+        requestAnimationFrame(this.animate);
         const deltaTime = this.clock.getDelta();
         
         this.character.update(deltaTime, this.inputManager.keys, this.scene.camera);
@@ -63,5 +84,4 @@ class Game {
     }
 }
 
-// Démarrer le jeu
-new Game(); 
+new Game();

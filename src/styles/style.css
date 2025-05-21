@@ -1,104 +1,190 @@
 body {
-            margin: 0;
-            overflow: hidden;
-            font-family: 'Arial', sans-serif;
-        }
-        canvas {
-            display: block;
-        }
-        #image-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            overflow-y: auto;
-        }
-        #image-modal.visible {
-            opacity: 1;
-        }
-        .modal-content {
-            margin: 40px auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 90%;
-            max-width: 1000px;
-            background-color: rgba(30, 30, 30, 0.95);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
-        }
-        #modal-img {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            margin-bottom: 30px;
-        }
-        #caption {
-            margin: 40px auto;
-            width: 100%;
-            max-width: 800px;
-            text-align: left;
-            color: white;
-            font-family: 'Arial', sans-serif;
-            padding: 0;
-            position: relative;
-            z-index: 2002;
-        }
-        #caption h3 {
-            font-size: 32px;
-            color: #fff;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border-bottom: 2px solid rgba(255,255,255,0.2);
-            padding-bottom: 15px;
-        }
-        #caption p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #f0f0f0;
-            text-align: justify;
-        }
-        .close {
-            position: fixed;
-            right: 35px;
-            top: 15px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 2001;
-            transition: all 0.3s ease;
-            background-color: rgba(0,0,0,0.5);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .close:hover {
-            color: #ff0000;
-            transform: rotate(90deg);
-            background-color: rgba(0,0,0,0.8);
-        }
-        .game-instructions {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 10px;
-            border-radius: 5px;
-            font-family: Arial, sans-serif;
-            display: none;
-        }
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+canvas {
+    display: block;
+}
+#image-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    overflow-y: auto;
+}
+#image-modal.visible {
+    opacity: 1;
+}
+.modal-content {
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    background-color: rgba(30, 30, 30, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+#modal-img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+#caption {
+    margin: 40px auto;
+    width: 100%;
+    max-width: 800px;
+    text-align: left;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 0;
+    position: relative;
+    z-index: 2002;
+}
+#caption h3 {
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    padding-bottom: 15px;
+}
+#caption p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #f0f0f0;
+    text-align: justify;
+}
+.close {
+    position: fixed;
+    right: 35px;
+    top: 15px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+    transition: all 0.3s ease;
+    background-color: rgba(0,0,0,0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close:hover {
+    color: #ff0000;
+    transform: rotate(90deg);
+    background-color: rgba(0,0,0,0.8);
+}
+.game-instructions {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    display: none;
+}
+
+/* Loading Screen Styles */
+#loading-screen {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 1;
+    transition: 1s opacity;
+}
+
+#loading-screen.fade-out {
+    opacity: 0;
+}
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #9370DB;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #BA55D3;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #FF00FF;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
