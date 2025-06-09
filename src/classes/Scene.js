@@ -2,9 +2,9 @@ import * as THREE from 'three';
 
 export class Scene {
     constructor() {
-        // Création de la scène
         this.scene = new THREE.Scene();
-        this.scene.background = new THREE.Color(0x87CEEB); // Ciel bleu clair
+        // Fond gris clair pour l'intérieur
+        this.scene.background = new THREE.Color(0xf5f5f5);
 
         // Configuration de la caméra
         this.camera = new THREE.PerspectiveCamera(
@@ -15,43 +15,19 @@ export class Scene {
         );
         this.camera.position.set(0, 5, 10);
 
-        // Configuration du renderer
-        this.renderer = new THREE.WebGLRenderer({ antialias: true });
+        // Configuration du renderer avec SSAO
+        this.renderer = new THREE.WebGLRenderer({ 
+            antialias: true,
+            powerPreference: "high-performance"
+        });
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         this.renderer.shadowMap.enabled = true;
-        this.renderer.shadowMap.type = THREE.BasicShadowMap;
+        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+        this.renderer.outputEncoding = THREE.sRGBEncoding;
         document.body.appendChild(this.renderer.domElement);
 
-        // Ajout des lumières
-        // Lumière ambiante principale
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
-        this.scene.add(ambientLight);
-
-        // Lumière directionnelle principale (soleil)
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-        directionalLight.position.set(50, 50, 50);
-        directionalLight.castShadow = true;
-        directionalLight.shadow.mapSize.width = 1024;
-        directionalLight.shadow.mapSize.height = 1024;
-        directionalLight.shadow.camera.near = 0.5;
-        directionalLight.shadow.camera.far = 500;
-        directionalLight.shadow.camera.left = -50;
-        directionalLight.shadow.camera.right = 50;
-        directionalLight.shadow.camera.top = 50;
-        directionalLight.shadow.camera.bottom = -50;
-        this.scene.add(directionalLight);
-
-        // Lumière hémisphérique pour un éclairage plus naturel
-        const hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.5);
-        this.scene.add(hemisphereLight);
-
-        // Une seule lumière ponctuelle au centre
-        const pointLight = new THREE.PointLight(0xffffff, 0.4);
-        pointLight.position.set(0, 10, 0);
-        pointLight.castShadow = false;
-        this.scene.add(pointLight);
-
-        // Création du curseur
+        // Éclairage de musée
+        this.setupLights();
         this.createCursor();
 
         // Gestion du redimensionnement de la fenêtre
@@ -59,6 +35,31 @@ export class Scene {
             this.camera.aspect = window.innerWidth / window.innerHeight;
             this.camera.updateProjectionMatrix();
             this.renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    }
+
+    setupLights() {
+        // Lumière ambiante douce
+        const ambientLight = new THREE.AmbientLight(0xffffff, 2.5);
+        this.scene.add(ambientLight);
+
+        // Spots directionnels pour l'effet musée
+        const spotPositions = [
+            { x: -10, y: 15, z: -10 },
+            { x: 10, y: 15, z: -10 },
+            { x: -10, y: 15, z: 10 },
+            { x: 10, y: 15, z: 10 }
+        ];
+
+        spotPositions.forEach(pos => {
+            const spotLight = new THREE.SpotLight(0xffffff, 1);
+            spotLight.position.set(pos.x, pos.y, pos.z);
+            spotLight.angle = Math.PI / 6;
+            spotLight.penumbra = 0.5;
+            spotLight.decay = 2;
+            spotLight.distance = 30;
+            spotLight.castShadow = true;
+            this.scene.add(spotLight);
         });
     }
 
@@ -94,4 +95,4 @@ export class Scene {
     render() {
         this.renderer.render(this.scene, this.camera);
     }
-} 
+}

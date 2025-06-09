@@ -32,7 +32,7 @@ export class Character {
             const distance = newPosition.distanceTo(obj.position);
             
             if (obj.type === 'cylinder') {
-                // For trees, check horizontal distance only
+                // Check horizontal distance only
                 const horizontalDistance = Math.sqrt(
                     Math.pow(newPosition.x - obj.position.x, 2) +
                     Math.pow(newPosition.z - obj.position.z, 2)
@@ -41,7 +41,7 @@ export class Character {
                     return true;
                 }
             } else if (obj.type === 'sphere') {
-                // For rocks, check full 3D distance
+                // Check full 3D distance
                 if (distance < obj.radius + this.collisionRadius) {
                     return true;
                 }

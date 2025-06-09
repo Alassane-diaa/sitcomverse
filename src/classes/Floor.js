@@ -10,68 +10,28 @@ export class Floor {
     }
 
     create() {
-        const groundGeometry = new THREE.PlaneGeometry(1000, 1000);
+        // Sol en marbre
+        const groundGeometry = new THREE.PlaneGeometry(50, 60);
+        const marbleTexture = new THREE.TextureLoader().load('/textures/marble_floor.jpg');
+        marbleTexture.wrapS = THREE.RepeatWrapping;
+        marbleTexture.wrapT = THREE.RepeatWrapping;
+        marbleTexture.repeat.set(8, 8);
+        
         const groundMaterial = new THREE.MeshStandardMaterial({
-            color: 0x15c139,
-            roughness: 0.9,
+            map: marbleTexture,
+            roughness: 0.1,
             metalness: 0.1,
             side: THREE.DoubleSide
         });
+
         const ground = new THREE.Mesh(groundGeometry, groundMaterial);
         ground.rotation.x = -Math.PI / 2;
-        ground.position.y = -0.1;
         ground.receiveShadow = true;
         this.scene.add(ground);
 
         // Création des textes sur le sol
         this.createFloorText("↑↓←→ : Se déplacer", new THREE.Vector3(-5, 0.1, 5), 7);
         this.createFloorText("ESPACE : Interagir ", new THREE.Vector3(-5, 0.1, 7), 7);
-
-        // Création du matériau argenté 
-        const silverMaterial = new THREE.MeshStandardMaterial({
-            color: 0xC0C0C0,
-            metalness: 0.9,
-            roughness: 0.2
-        });
-
-        // Placement des lettres pour écrire ALASSANE
-        const letterPositions = [
-            { letter: 'A', x: -10, y: 0.3, z: -5, rotation: 0 },
-            { letter: 'L', x: -9, y: 0.1, z: -5, rotation: 0 },
-            { letter: 'A', x: -8.35, y: 0.3, z: -5, rotation: 0 },
-            { letter: 'S', x: -7.35, y: 0.1, z: -5, rotation: 0 },
-            { letter: 'S', x: -6.5, y: 0.1, z: -5, rotation: 0 },
-            { letter: 'A', x: -5.70, y: 0.3, z: -5, rotation: 0 },
-            { letter: 'N', x: -4.70, y: 0.1, z: -5, rotation: 0 },
-            { letter: 'E', x: -3.70, y: 0.1, z: -5, rotation: 0 }
-        ];
-
-        // Chargement parallèle des lettres
-        const loadPromises = letterPositions.map(pos => {
-            return new Promise((resolve) => {
-                this.loader.load(
-                    `/models/${pos.letter}.glb`,
-                    (gltf) => {
-                        const letter = gltf.scene;
-                        letter.position.set(pos.x, pos.y, pos.z);
-                        letter.rotation.y = pos.rotation;
-                        letter.scale.set(1.5, 1.5, 1.5);
-                        
-                        // Appliquer le matériau à tous les meshes
-                        letter.traverse((child) => {
-                            if (child.isMesh) {
-                                child.castShadow = true;
-                                child.receiveShadow = true;
-                                child.material = silverMaterial;
-                            }
-                        });
-                        
-                        this.scene.add(letter);
-                        resolve();
-                    }
-                );
-            });
-        });
 
             }
 
@@ -83,13 +43,13 @@ export class Floor {
         canvas.height = 256;
 
         // Configurer le style du texte
-        context.fillStyle = '#ffffff';
+        context.fillStyle = '#000000';
         context.font = 'bold 60px Arial';  
         context.textAlign = 'center';
         context.textBaseline = 'middle';
 
         // Dessiner le cadre
-        context.strokeStyle = '#ffffff';
+        context.strokeStyle = '#000000';
         context.lineWidth = 8;
         context.strokeRect(20, 20, canvas.width - 40, canvas.height - 40);
 
@@ -119,4 +79,4 @@ export class Floor {
         // Ajouter le texte à la scène
         this.scene.add(textMesh);
     }
-} 
+}

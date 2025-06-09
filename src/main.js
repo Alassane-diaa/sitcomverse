@@ -10,21 +10,25 @@ import { ModalManager } from './classes/ModalManager.js';
 
 class Game {
     constructor() {
+        this.isLoading = true;
         this.animate = this.animate.bind(this);
         this.createLoadingScreen();
-        
-        requestAnimationFrame(() => {
-            this.init();
-            this.animate();
-            
-            setTimeout(() => {
-                const loadingScreen = document.getElementById('loading-screen');
+        this.init();
+        this.animate();
+
+        // Start hiding loading screen after 3 seconds
+        setTimeout(() => {
+            this.isLoading = false;
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
                 loadingScreen.classList.add('fade-out');
                 loadingScreen.addEventListener('transitionend', (event) => {
-                    event.target.remove();
+                    if (event.target.parentNode) {
+                        event.target.remove();
+                    }
                 });
-            }, 3000); 
-        });
+            }
+        }, 3000);
     }
 
     createLoadingScreen() {
@@ -76,10 +80,15 @@ class Game {
 
     animate() {
         requestAnimationFrame(this.animate);
-        const deltaTime = this.clock.getDelta();
         
-        this.character.update(deltaTime, this.inputManager.keys, this.scene.camera);
-        this.checkInteractions();
+        // Only update game logic after loading is complete
+        if (!this.isLoading) {
+            const deltaTime = this.clock.getDelta();
+            this.character.update(deltaTime, this.inputManager.keys, this.scene.camera);
+            this.checkInteractions();
+        }
+        
+        // Always render the scene
         this.scene.render();
     }
 }
