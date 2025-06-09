@@ -1,100 +1,100 @@
 {
-    "series": [
-        {
-            "id": "friends",
-            "title": "Friends (1994-2004)",
-            "description": "Friends est une sitcom culte qui a marqué toute une génération avec ses six personnages inséparables vivant à New York. Entre humour, amour et amitié, la série explore avec finesse et légèreté les hauts et les bas de la vie adulte. Son humour universel et ses répliques cultes ont contribué à en faire un phénomène mondial, encore regardé des décennies après sa fin.",
-            "imageUrl": "/images/friends.jpg",
-            "position": {
-                "x": 2,
-                "y": 1.16,
-                "z": 2
-            },
-            "category": "sitcom"
-        },
-        {
-            "id": "office",
-            "title": "The Office (2005-2013)",
-            "description": "The Office est une sitcom américaine au format mockumentaire qui suit le quotidien absurde d’une entreprise de papier en Pennsylvanie. Portée par le personnage excentrique de Michael Scott, interprété par Steve Carell, la série mêle humour gênant, moments sincères et satire sociale, devenant un modèle du genre et une source infinie de mèmes sur internet.",
-            "imageUrl": "/images/office.jpg",
-            "position": {
-                "x": 2,
-                "y": 1.16,
-                "z": 7
-            },
-            "category": "sitcom"
-        },
-        {
-            "id": "himym",
-            "title": "How I Met Your Mother (2005-2014)",
-            "description": "How I Met Your Mother raconte de manière originale et non linéaire les aventures sentimentales de Ted Mosby et de sa bande d’amis à New York. La série se distingue par sa narration inventive, ses personnages mémorables comme Barney Stinson, et sa capacité à mêler humour et émotion avec brio, créant un attachement profond chez les spectateurs.",
-            "imageUrl": "/images/himym.jpg",
-            "position": {
-                "x": 2,
-                "y": 1.16,
-                "z": 12
-            },
-            "category": "sitcom"
-        },
-        {
-            "id": "seinfeld",
-            "title": "Seinfeld (1989-1998)",
-            "description": "Considérée comme l'une des meilleures sitcoms de tous les temps, Seinfeld se démarque par son humour basé sur le quotidien et ses observations absurdes sur la vie urbaine. Portée par le comédien Jerry Seinfeld et ses amis excentriques, la série a influencé tout le genre de la sitcom avec sa fameuse règle du « show about nothing ».",
-            "imageUrl": "/images/seinfeld.jpg",
-            "position": {
-                "x": 2,
-                "y": 1.16,
-                "z": 17
-            },
-            "category": "sitcom"
-        },
-        {
-            "id": "brooklyn99",
-            "title": "Brooklyn Nine-Nine (2013-2021)",
-            "description": "Brooklyn Nine-Nine est une comédie policière rafraîchissante qui suit les aventures loufoques d’une équipe de détectives new-yorkais. Avec son humour vif, ses personnages diversifiés et ses dialogues rapides, la série aborde aussi des thèmes sérieux avec légèreté, tout en restant profondément attachante et hilarante.",
-            "imageUrl": "images/brooklyn99.jpg",
-            "position": {
-                "x": 2,
-                "y": 1.16,
-                "z": -2
-            },
-            "category": "sitcom"
-        },
-        {
-            "id": "bigbangtheory",
-            "title": "The Big Bang Theory (2007-2019)",
-            "description": "The Big Bang Theory suit un groupe de scientifiques socialement maladroits dont le quotidien est bouleversé par l’arrivée d’une voisine extravertie. Mélangeant références geek, humour scientifique et dynamique de groupe, la série est devenue un pilier de la culture pop télévisuelle grâce à ses personnages exubérants et ses répliques cultes.",
-            "imageUrl": "images/bigbang.jpg",
-            "position": {
-                "x": 2,
-                "y": 1.16,
-                "z": -7
-            },
-            "category": "sitcom"
-        },
-        {
-            "id": "modernfamily",
-            "title": "Modern Family (2009-2020)",
-            "description": "Modern Family propose une vision contemporaine et hilarante de la famille à travers trois foyers aux profils variés. Grâce à sa narration en style documentaire et à sa galerie de personnages uniques, la série explore avec humour les situations du quotidien, les différences culturelles et les liens intergénérationnels.",
-            "imageUrl": "images/modernfamily.jpg",
-            "position": {
-                "x": 2,
-                "y": 1.16,
-                "z": -12
-            },
-            "category": "sitcom"
-        },
-        {
-            "id": "twoandhalfmen",
-            "title": "Two and a Half Men (2003-2015)",
-            "description": "Two and a Half Men raconte la cohabitation explosive entre un homme à femmes, son frère divorcé et le fils adolescent de ce dernier. Connue pour son humour provocant et ses dialogues percutants, la série a connu un immense succès pendant des années, notamment grâce à la performance de Charlie Sheen.",
-            "imageUrl": "images/twoandhalfmen.jpg",
-            "position": {
-                "x": 2,
-                "y": 1.16,
-                "z": -17
-            },
-            "category": "sitcom"
-        }
-    ]
+  "series": [
+    {
+      "id": "sitcom_intro",
+      "title": "Les Sitcoms : Un Phénomène Culturel",
+      "description": "Les sitcoms, ou 'situation comedies', sont des séries télévisées humoristiques basées sur des situations récurrentes, souvent dans un cadre fixe (famille, bureau, colocataires, etc.). Leur format court, leurs personnages récurrents et leurs dialogues percutants en font un genre populaire depuis les débuts de la télévision. Nées dans les années 1950, les sitcoms ont évolué avec leur époque, intégrant de nouveaux formats (mockumentaire, animation) et s’attaquant à des sujets sociaux tout en gardant une vocation divertissante. Leur succès s’explique par leur capacité à faire rire tout en reflétant les dynamiques humaines avec sincérité, absurdité ou tendresse.",
+      "imageUrl": "images/info.png",
+      "position": { "x": 0, "y": 1.16, "z": 0 },
+      "category": "sitcom"
+    },
+    {
+      "id": "friends",
+      "title": "Friends (1994-2004)",
+      "description": "Friends est une sitcom culte qui a marqué toute une génération avec ses six personnages inséparables vivant à New York. Portée par une chimie parfaite entre les acteurs et un humour accessible, la série explore avec finesse les relations amicales, amoureuses et professionnelles dans la vie adulte. Les décors emblématiques comme le Central Perk, les dialogues devenus légendaires et les nombreux moments d’émotion ont fait de Friends une œuvre intemporelle, qui reste l’une des séries les plus regardées dans le monde, même des décennies après sa fin.",
+      "imageUrl": "/images/friends.jpg",
+      "position": { "x": 12, "y": 1.16, "z": -10 },
+      "category": "sitcom"
+    },
+    {
+      "id": "office",
+      "title": "The Office (2005-2013)",
+      "description": "The Office révolutionne le format sitcom avec son style 'mockumentaire' qui donne un aspect réaliste et intime à la série. En suivant les employés de Dunder Mifflin, une entreprise de papier en Pennsylvanie, la série joue sur l'humour de l'absurde, les malaises sociaux et les relations humaines. Michael Scott, interprété par Steve Carell, incarne un patron maladroit et attachant. Son succès tient à sa capacité à faire rire tout en évoquant la solitude, l’ambition et les rêves de gens ordinaires.",
+      "imageUrl": "/images/office.jpg",
+      "position": { "x": -12, "y": 1.16, "z": -10 },
+      "category": "sitcom"
+    },
+    {
+      "id": "himym",
+      "title": "How I Met Your Mother (2005-2014)",
+      "description": "Avec sa narration non linéaire et son storytelling ingénieux, How I Met Your Mother réinvente la sitcom classique. Racontée comme un long flashback, la série mêle humour, émotion et mystère autour de la quête amoureuse de Ted. Les personnages secondaires comme Barney, Marshall, Lily et Robin deviennent aussi centraux que le héros lui-même. La série aborde aussi bien les déceptions de la vie adulte que la nostalgie du passé, ce qui lui confère une tonalité unique, entre drame et comédie.",
+      "imageUrl": "/images/himym.jpg",
+      "position": { "x": 8, "y": 1.16, "z": -3 },
+      "category": "sitcom"
+    },
+    {
+      "id": "seinfeld",
+      "title": "Seinfeld (1989-1998)",
+      "description": "Qualifiée de 'série sur rien', Seinfeld est une sitcom pionnière dans l’observation comique du quotidien. Elle suit Jerry, un comédien new-yorkais, et ses amis dans des intrigues souvent absurdes. Le génie de la série réside dans sa capacité à transformer des détails banals en moments hilarants. Sa structure anti-narrative et ses personnages sans évolution majeure ont influencé un grand nombre de séries ultérieures, imposant un ton nouveau dans la comédie télévisuelle.",
+      "imageUrl": "/images/seinfeld.jpg",
+      "position": { "x": -8, "y": 1.16, "z": -3 },
+      "category": "sitcom"
+    },
+    {
+      "id": "brooklyn99",
+      "title": "Brooklyn Nine-Nine (2013-2021)",
+      "description": "Brooklyn Nine-Nine est une sitcom policière alliant humour et diversité. Elle suit l’équipe loufoque du 99e commissariat de Brooklyn dans des affaires criminelles improbables. Grâce à des personnages marquants comme Jake Peralta, Rosa Diaz ou le capitaine Holt, la série traite avec légèreté de thèmes importants comme la discrimination, l’identité et les relations professionnelles. Son rythme dynamique et ses punchlines en font un classique moderne du genre.",
+      "imageUrl": "images/brooklyn99.jpg",
+      "position": { "x": 12, "y": 1.16, "z": 10 },
+      "category": "sitcom"
+    },
+    {
+      "id": "bigbangtheory",
+      "title": "The Big Bang Theory (2007-2019)",
+      "description": "The Big Bang Theory propose une immersion hilarante dans le quotidien de scientifiques brillants mais socialement maladroits. L’arrivée de Penny, une voisine extravertie, bouleverse l'équilibre de ce groupe de geeks. La série est célèbre pour son mélange de références à la culture pop, à la science et aux jeux vidéo, tout en explorant l’évolution sociale et sentimentale de ses personnages. Elle a démocratisé l’image du geek à la télévision.",
+      "imageUrl": "images/bigbang.jpg",
+      "position": { "x": 8, "y": 1.16, "z": 3 },
+      "category": "sitcom"
+    },
+    {
+      "id": "modernfamily",
+      "title": "Modern Family (2009-2020)",
+      "description": "Tournée sous forme de faux documentaire, Modern Family dresse un portrait drôle et touchant de la famille contemporaine. En suivant trois foyers liés entre eux, la série brise les stéréotypes traditionnels avec humour : familles recomposées, couples homosexuels, écarts culturels ou générationnels. Elle aborde avec finesse l'évolution des valeurs familiales dans une société en mutation, tout en restant profondément divertissante.",
+      "imageUrl": "images/modernfamily.jpg",
+      "position": { "x": -12, "y": 1.16, "z": 10 },
+      "category": "sitcom"
+    },
+    {
+      "id": "twoandhalfmen",
+      "title": "Two and a Half Men (2003-2015)",
+      "description": "Avec son humour provocateur et ses situations souvent excessives, Two and a Half Men raconte la cohabitation mouvementée entre un célibataire endurci, son frère divorcé et le fils de ce dernier. La série s’appuie sur des dialogues acérés et des situations comiques parfois controversées. Elle a connu un immense succès dans les années 2000, en grande partie grâce à la performance de Charlie Sheen, puis d’Ashton Kutcher après son départ.",
+      "imageUrl": "images/twoandhalfmen.jpg",
+      "position": { "x": 0, "y": 1.16, "z": -12 },
+      "category": "sitcom"
+    },
+    {
+      "id": "simpsons",
+      "title": "The Simpsons (1989- )",
+      "description": "Les Simpson, plus longue série animée de l’histoire, est une satire sociale brillante déguisée en sitcom familiale. À travers les aventures de la famille Simpson dans la ville fictive de Springfield, la série critique la société américaine, la politique, la religion et la culture populaire. Connue pour son humour multi-niveaux et ses innombrables références culturelles, elle a influencé toutes les sitcoms animées qui ont suivi.",
+      "imageUrl": "images/simpsons.jpg",
+      "position": { "x": 5, "y": 1.16, "z": 15 },
+      "category": "sitcom"
+    },
+    {
+      "id": "familyguy",
+      "title": "Family Guy (1999- )",
+      "description": "Family Guy reprend le modèle des Simpson, mais en y ajoutant une couche d’irrévérence et d’humour noir. Centrée sur la famille Griffin, la série est connue pour ses blagues absurdes, ses détournements de culture pop et ses personnages excentriques comme Peter, Stewie ou Brian. Bien qu’elle ait parfois suscité des polémiques, Family Guy reste l’une des séries animées les plus influentes du paysage télévisuel.",
+      "imageUrl": "images/familyguy.webp",
+      "position": { "x": 0, "y": 1.16, "z": 18 },
+      "category": "sitcom"
+    },
+    {
+      "id": "bojackhorseman",
+      "title": "BoJack Horseman (2014-2020)",
+      "description": "BoJack Horseman est une série animée atypique qui mêle comédie satirique et drame existentiel. Elle suit un ancien acteur de sitcom déchu, confronté à ses regrets et à sa quête de sens dans une version anthropomorphe d’Hollywood. Derrière son humour absurde et ses visuels colorés, la série aborde des thèmes profonds comme la dépression, l’addiction, la célébrité et la rédemption. Elle a redéfini les limites de ce que peut être une sitcom animée.",
+      "imageUrl": "images/bojack.jpg",
+      "position": { "x": -5, "y": 1.16, "z": 15 },
+      "category": "sitcom"
+    }
+  ]
 }

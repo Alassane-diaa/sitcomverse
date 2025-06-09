@@ -12,6 +12,7 @@ export class InterestPoint {
         this.loader = new GLTFLoader();
         
         this.createMarker();
+        this.createCircle(); 
         this.createImageSprite();
         
         // Créer une instance unique du ModalManager
@@ -25,11 +26,11 @@ export class InterestPoint {
         this.markerGroup = new THREE.Group();
         
         this.loader.load(
-            '/models/holovision.glb',
+            '/models/hologram_projector.glb',
             (gltf) => {
                 const holovision = gltf.scene;
                 holovision.position.y = -1;
-                holovision.scale.set(0.25, 0.5, 0.25);
+                holovision.scale.set(0.125, 0.125, 0.125);
                 holovision.traverse((child) => {
                     if (child.isMesh) {
                         child.castShadow = true;
@@ -42,6 +43,24 @@ export class InterestPoint {
 
         this.markerGroup.position.copy(this.position);
         this.scene.add(this.markerGroup);
+    }
+
+    createCircle() {
+        // Create a ring geometry
+        const ringGeometry = new THREE.RingGeometry(2, 2.2, 32);
+        
+        const ringMaterial = new THREE.MeshBasicMaterial({
+            color: 0x000000,
+            side: THREE.DoubleSide,
+            transparent: true,
+            opacity: 0.5
+        });
+
+        const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+        ring.rotation.x = -Math.PI / 2
+        ring.position.y = -1;
+        this.markerGroup.add(ring);
+
     }
 
     createImageSprite() {
@@ -65,6 +84,7 @@ export class InterestPoint {
                 this.imageSprite.scale.set(spriteWidth, spriteHeight, 1);
                 this.imageSprite.position.copy(this.position);
                 this.imageSprite.position.y += 0.5;
+                this.imageSprite.position.z -= 0.5;
                 this.scene.add(this.imageSprite);
 
                 // Démarrer l'animation une fois l'image chargée
